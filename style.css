@@ -1,0 +1,135 @@
+body {
+    background-color:#ffffff;
+}
+
+.Title{
+    font-family: 'Bangers', cursive;
+    font-size: 10vw;
+    display: flex;
+    justify-content: center;
+    background-color: #002654;
+    padding: 10vh;
+    color: #FFFFFF;
+    margin-top: 0;
+}
+
+.Subtitle {
+    font-family: 'Bangers', cursive;
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+    color: #002654;
+}
+
+.Subsubtitle {
+    font-family: 'Bangers', cursive;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    color: #002654;
+}
+
+.dark {
+    background-color: #002654;
+    color: #FFFFFF;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+}
+
+.Question {
+    font-family: 'Bangers', cursive;
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+    color: #002654;
+    text-align: center;
+}
+
+.button {
+    width: 20vw;
+    height: 10vh;
+    border: none;
+    color: white;
+    padding: 1vh 1vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 4vw;
+    margin-top: 8vh;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.learnMore {
+    font-family: 'Bangers', cursive;
+    background-color: #ffffff;
+    color: #ff0077;
+    border: 4px solid #ff0077;
+    align-self: center;
+    font-size:2vw;
+    font-weight: 600;
+    border-radius: 2vw;
+}
+
+.learnMore:hover {
+    background-color: #ff0077;
+    color: #ffffff;
+}
+
+.answer {
+    width: 18vw;
+    font-family: 'Bangers', cursive;
+    background-color: #ffffff;
+    color: #002654;
+    border: 4px solid #002654;
+    font-size:2vw;
+    font-weight: 600;
+    border-radius: 2vw;
+    display:inline-block;
+}
+
+.answer:hover {
+    background-color: #002654;
+    color: #ffffff;
+}
+
+.selected {
+    background-color: #ff0077;
+    color: #ffffff;
+}
+
+.selected:hover {
+    background-color: #ff0077;
+    color: #ffffff;
+}
+
+.done {
+    width: 30vw;
+    font-family: 'Bangers', cursive;
+    background-color: #ffffff;
+    color: #ff0077;
+    border: 4px solid #ff0077;
+    align-self: center;
+    font-size:2vw;
+    font-weight: 600;
+    border-radius: 2vw;
+}
+
+.done:hover {
+    background-color: #ff0077;
+    color: #ffffff;
+}
+
+.QuestionContainer {
+    margin-top: 10vh; 
+    margin-bottom: 20vh
+}
+
+.math {
+    font-size: 3vw;
+}
+
+img {
+    width: 60vw;
+    height: 42.6vw; /* images are 2028x1440 */
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title> Your functional horoscope </title>
+    <script src="../definitions.js"></script>
+    <script src="horoscopes.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> 
+
+    <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" defer>
+    </script>
+
+</head>
+
+<body>
+
+    <h1 class="Title" id="Title">LINEAR / STRAIGHT LINE</h1>
+    <h3 class="Subtitle" id="Subtitle">You are a linear / straight line graph!</h3>
+
+    <p class="Subsubtitle">But what does that say about you?</p>
+
+    <div style="text-align:center;">
+        <button class="button learnMore" onclick="letsGoScroll()">Learn more</button>
+    </div>
+
+    <p class="Subsubtitle dark" style="margin-top: 15vh" id="scrollTarget">
+        Straight line graph fact file
+    </p>
+
+    <p class="Subsubtitle">
+        General form
+
+        <!-- https://pandoc.org/try/ -->
+        <p><span class="math display" id="generalForm"></span></p>
+        <br>
+    </p>
+
+    
+
+    <p class="Subsubtitle">Graph of Function</p>
+
+    <div style="text-align: center" id="graph">
+        
+    </div>
+
+    <p class="Subsubtitle dark" style="margin-top: 15vh" id="scrollTarget">
+        What does this mean?
+    </p>
+
+    <p id="horoscope">
+    </p>
+    
+    <div style="text-align:center;">
+        <button class="button done" onclick=loadMain()>
+            Let's do the quiz again!
+        </button>
+    </div>
+
+</body>
+
+<script src="sketch.js"></script>
