@@ -4,18 +4,19 @@ body {
 
 .Title{
     font-family: 'Bangers', cursive;
-    font-size: 10vw;
+    font-size: 12vw;
     display: flex;
     justify-content: center;
     background-color: #002654;
-    padding: 10vh;
+    /* background-color: #ff0077; */
+    padding: 6vh;
     color: #FFFFFF;
     margin-top: 0;
 }
 
 .Subtitle {
     font-family: 'Bangers', cursive;
-    font-size: 4vw;
+    font-size: 6vw;
     display: flex;
     justify-content: center;
     color: #002654;
@@ -132,4 +133,49 @@ body {
 img {
     width: 60vw;
     height: 42.6vw; /* images are 2028x1440 */
+}
+
+.footer {
+    text-align:center;
+    background-color:#002654;
+    font-family: 'Bangers', cursive;
+    font-size: 2vw;
+    margin-top: 10vh;
+    padding: 5vh;
+    color:#ffffff;
+    line-height: 3vw;
+}
+
+.censorButtonOn {
+    width: 30vw;
+    font-family: 'Bangers', cursive;
+    background-color: #ffffff;
+    color: #00c527;
+    border: 4px solid #00c527;
+    align-self: center;
+    font-size:2vw;
+    font-weight: 600;
+    border-radius: 2vw;
+}
+
+.censorButtonOn:hover {
+    background-color: #00c527;
+    color: #ffffff;
+}
+
+.censorButtonOff {
+    width: 30vw;
+    font-family: 'Bangers', cursive;
+    background-color: #ffffff;
+    color: #ff0077;
+    border: 4px solid #ff0077;
+    align-self: center;
+    font-size:2vw;
+    font-weight: 600;
+    border-radius: 2vw;
+}
+
+.censorButtonOff:hover {
+    background-color: #ff0077;
+    color: #ffffff;
 }

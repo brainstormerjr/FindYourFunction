@@ -37,18 +37,19 @@ for (let i = 0; i < questions.length; i++) {
 
     <div style="text-align:center;">
         <button class="button answer" onclick="selectAnswer(${i},0)" id="button ${i}/0">
-            Hell no!
+            ${questions[i].choices[0]}
         </button>
         <button class="button answer" onclick="selectAnswer(${i},1)" id="button ${i}/1">
-            Sorry, but no.</button>
+            ${questions[i].choices[1]}
+        </button>
         <button class="button answer" onclick="selectAnswer(${i},2)" id="button ${i}/2">
-            I don't know?
+            ${questions[i].choices[2]}
         </button>
         <button class="button answer" onclick="selectAnswer(${i},3)" id="button ${i}/3">
-            Well, yeah.
+            ${questions[i].choices[3]}
         </button>
         <button class="button answer" onclick="selectAnswer(${i},4)" id="button ${i}/4">
-            Hell yeah!
+            ${questions[i].choices[4]}
         </button>
     </div>
     </div>`;
@@ -57,6 +58,13 @@ for (let i = 0; i < questions.length; i++) {
     document.getElementById("QuestionsContainer").innerHTML += questionHTML;
 
 }
+
+let censored = localStorage.getItem('censored') == "true";
+if (censored == null) {
+    censored = true;
+    localStorage.setItem('censored', true);
+}
+updateCensor();
 
 function letsGoScroll() {
     document.getElementById("scrollTarget")
@@ -101,7 +109,7 @@ function calculatePoints() {
     let yourGraph = null;
     let topWinRate = -Infinity;
 
-    if (scores[PUSSY] > questions.length * 0.8) yourGraph = PUSSY;
+    if (scores[PUSSY] >= questions.length * 0.8) yourGraph = PUSSY;
     else {
         for (const key in scores) {
             if (key == PUSSY) continue;
@@ -119,4 +127,35 @@ function calculatePoints() {
 
     window.location.href = 'graphs/horoscope.html';
     
+}
+
+function toggleCensor() {
+    censored = !censored;
+    localStorage.setItem('censored', censored);
+    updateCensor();
+}
+
+function updateCensor() {
+    console.log(censored)
+    document.getElementById("censorButton").className 
+        = censored ? "button censorButtonOn" : "button censorButtonOff";
+    document.getElementById("censorButton").innerHTML
+        = censored ? "Family Friendly Mode: ON" : "Family Friendly Mode: OFF";
+
+    console.log(document.getElementById("censorButton"))
+
+    let html = document.documentElement.innerHTML;
+    if (censored) {
+        html = html.replace(/fuck/g, "f***");
+        html = html.replace(/Fuck/g, "F***");
+        html = html.replace(/shit/g, "s***");
+        html = html.replace(/pussy/g, "p****");
+    } else {
+        html = html.replace(/f\*\*\*/g, "fuck");
+        html = html.replace(/F\*\*\*/g, "Fuck");
+        html = html.replace(/s\*\*\*/g, "shit");
+        html = html.replace(/p\*\*\*\*/g, "pussy");
+    }
+
+    document.documentElement.innerHTML = html;
 }

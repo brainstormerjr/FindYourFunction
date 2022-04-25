@@ -15,8 +15,8 @@
 
 <body>
 
-    <h1 class="Title">FIND YOUR FUNCTION :</h1>
-    <h3 class="Subtitle">which function are you?</h3>
+    <h1 class="Title">FIND YOUR FUNCTION !</h1>
+    <h3 class="Subtitle">which function are you ?</h3>
 
     <p class="Subsubtitle">Answer the following questions to find out!</p>
 
@@ -28,12 +28,35 @@
         Tell us a little about yourself by answering these questions!
     </p>
 
+    <div style="text-align:center;">
+        <button class="button censorButtonOn" onclick="toggleCensor()" id="censorButton">
+            Family Friendly Mode: ON
+        </button>
+    </div>
+
     <p id="QuestionsContainer"></p>
     
     <div style="text-align:center;">
         <button class="button done" onclick="calculatePoints()">
             I'm done! Show me my function!
         </button>
+    </div>
+
+    <div class="footer">
+        <div style="margin-bottom: 10vh; color: #f6ffc5">
+            Disclaimer:
+            <br>
+            This personality test is not clinically tested and has no experimental foundation
+        </div>
+
+        Personality test designed by Harold Kwan & Samuel Yip
+        <br>
+        Produced by Harold Kwan
+        <br>
+        This project is on
+        <a href="https://github.com/brainstormerjr/FIndYourFunction" target="_blank">
+            <u style="color: #dea1ff; text-decoration-thickness: 5px;">GitHub</u>
+        </a>
     </div>
 
 </body>
