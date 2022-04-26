@@ -1,3 +1,47 @@
+let questions;
+
+let censored = localStorage.getItem('censored') == "true";
+        if (censored == null) {
+            censored = true;
+            localStorage.setItem('censored', true);
+        }
+
+// Generate all questions
+let jsonData = fetch('questions.json')
+    .then(response => response.json())
+    .then(json => {
+        console.log(json)
+        for (let i = 0; i < json.questions.length; i++) {
+            questions = json.questions
+            let questionHTML = `<div class="QuestionContainer">
+            <p class="Question" id="question ${i}">${i+1}: ${questions[i].question}</p>
+        
+            <div style="text-align:center;">
+                <button class="button answer" onclick="selectAnswer(${i},0)" id="button ${i}/0">
+                    ${questions[i].choices[0]}
+                </button>
+                <button class="button answer" onclick="selectAnswer(${i},1)" id="button ${i}/1">
+                    ${questions[i].choices[1]}
+                </button>
+                <button class="button answer" onclick="selectAnswer(${i},2)" id="button ${i}/2">
+                    ${questions[i].choices[2]}
+                </button>
+                <button class="button answer" onclick="selectAnswer(${i},3)" id="button ${i}/3">
+                    ${questions[i].choices[3]}
+                </button>
+                <button class="button answer" onclick="selectAnswer(${i},4)" id="button ${i}/4">
+                    ${questions[i].choices[4]}
+                </button>
+            </div>
+            </div>`;
+        
+        
+            document.getElementById("QuestionsContainer").innerHTML += questionHTML;
+        
+        }
+        updateCensor();
+    });
+
 let scores = {
     LINEAR: 0,
     CIRCLE: 0,
@@ -29,42 +73,6 @@ let matchups = {
 }
 
 
-// Generate all questions
-
-for (let i = 0; i < questions.length; i++) {
-    let questionHTML = `<div class="QuestionContainer">
-    <p class="Question" id="question ${i}">${i+1}: ${questions[i].question}</p>
-
-    <div style="text-align:center;">
-        <button class="button answer" onclick="selectAnswer(${i},0)" id="button ${i}/0">
-            ${questions[i].choices[0]}
-        </button>
-        <button class="button answer" onclick="selectAnswer(${i},1)" id="button ${i}/1">
-            ${questions[i].choices[1]}
-        </button>
-        <button class="button answer" onclick="selectAnswer(${i},2)" id="button ${i}/2">
-            ${questions[i].choices[2]}
-        </button>
-        <button class="button answer" onclick="selectAnswer(${i},3)" id="button ${i}/3">
-            ${questions[i].choices[3]}
-        </button>
-        <button class="button answer" onclick="selectAnswer(${i},4)" id="button ${i}/4">
-            ${questions[i].choices[4]}
-        </button>
-    </div>
-    </div>`;
-
-
-    document.getElementById("QuestionsContainer").innerHTML += questionHTML;
-
-}
-
-let censored = localStorage.getItem('censored') == "true";
-if (censored == null) {
-    censored = true;
-    localStorage.setItem('censored', true);
-}
-updateCensor();
 
 function letsGoScroll() {
     document.getElementById("scrollTarget")

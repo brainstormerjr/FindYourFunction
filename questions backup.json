@@ -1,0 +1,254 @@
+{
+    "questions": [
+        {
+            "question": "Would you say you are a very positive person?",
+            "answerWeight": {
+                "LINEAR": 0.25,
+                "CIRCLE": 0,
+                "QUADRATIC": 0.25,
+                "CUBIC": 0,
+                "EXPONENTIAL": 0.5,
+                "LOGARITHMIC": -0.5,
+                "INVERSE": -1,
+                "ABSOLUTE": 1,
+                "SINECOSINE": 0.25,
+                "TANGENT": 0.25,
+                "SPIRAL": 0.25,
+                "PUSSY": 0
+            },
+            "choices": [
+                "Hell no!",
+                "Sorry, but no.",
+                "I don't know?",
+                "Well, yeah.",
+                "Hell yeah!"
+            ],
+            "answer": null
+        },
+        {
+            "question": "Do you enjoy taking risks?",
+            "answerWeight": {
+                "LINEAR": -0.25,
+                "CIRCLE": -0.5,
+                "QUADRATIC": 0.25,
+                "CUBIC": 0.75,
+                "EXPONENTIAL": 0.25,
+                "LOGARITHMIC": -0.25,
+                "INVERSE": 0,
+                "ABSOLUTE": 0,
+                "SINECOSINE": -1,
+                "TANGENT": 1,
+                "SPIRAL": 0.5,
+                "PUSSY": 0
+            },
+            "choices": [
+                "Hell no!",
+                "Sorry, but no.",
+                "I don't know?",
+                "Well, yeah.",
+                "Hell yeah!"
+            ],
+            "answer": null
+        },
+        {
+            "question": "Can you easily motivate yourself to work on something important, even if it is something you don't enjoy?",
+            "answerWeight": {
+                "LINEAR": 0.75,
+                "CIRCLE": -0.75,
+                "QUADRATIC": 0.5,
+                "CUBIC": 0.25,
+                "EXPONENTIAL": 1,
+                "LOGARITHMIC": -1,
+                "INVERSE": -1,
+                "ABSOLUTE": 1,
+                "SINECOSINE": -0.5,
+                "TANGENT": 0.5,
+                "SPIRAL": 0,
+                "PUSSY": 0
+            },
+            "choices": [
+                "Me procrastinate.",
+                "I can't really.",
+                "I don't know?",
+                "Sure. Yeah.",
+                "Hell yeah!"
+            ],
+            "answer": null
+        },
+        {
+            "question": "When there is an opportunity to improve yourself, <br> do you think you seize them well?",
+            "answerWeight": {
+                "LINEAR": 0.75,
+                "CIRCLE": -0.75,
+                "QUADRATIC": 1,
+                "CUBIC": 0.5,
+                "EXPONENTIAL": 0,
+                "LOGARITHMIC": 0,
+                "INVERSE": -0.5,
+                "ABSOLUTE": 0.5,
+                "SINECOSINE": -0.75,
+                "TANGENT": 0.75,
+                "SPIRAL": 0.25,
+                "PUSSY": 0
+            },
+            "choices": [
+                "Hell no!",
+                "Sorry, but no.",
+                "I don't know?",
+                "Well, yeah.",
+                "Hell yeah!"
+            ],
+            "answer": null
+        },
+        {
+            "question": "Are the things you say to others clear and straightforward?",
+            "answerWeight": {
+                "LINEAR": 1,
+                "CIRCLE": -0.25,
+                "QUADRATIC": 0.5,
+                "CUBIC": 0,
+                "EXPONENTIAL": 0,
+                "LOGARITHMIC": 0,
+                "INVERSE": 0.25,
+                "ABSOLUTE": 0.25,
+                "SINECOSINE": 0,
+                "TANGENT": 0,
+                "SPIRAL": -1,
+                "PUSSY": 0
+            },
+            "choices": [
+                "Maybe not yes.",
+                "Possibly? Idk.",
+                "I don't know?",
+                "Well, yeah.",
+                "Absolutely!"
+            ],
+            "answer": null
+        },
+        {
+            "question": "When things are down, do you easily get back up?",
+            "answerWeight": {
+                "LINEAR": 0.25,
+                "CIRCLE": 0,
+                "QUADRATIC": 0.5,
+                "CUBIC": 1,
+                "EXPONENTIAL": 0.5,
+                "LOGARITHMIC": -0.5,
+                "INVERSE": -0.75,
+                "ABSOLUTE": 0.75,
+                "SINECOSINE": 0,
+                "TANGENT": 0,
+                "SPIRAL": -0.5,
+                "PUSSY": 0
+            },
+            "choices": [
+                "Hell no!",
+                "Sorry, but no.",
+                "I don't know?",
+                "Well, yeah.",
+                "Hell yeah!"
+            ],
+            "answer": null
+        },
+        {
+            "question": "Do you like exploration / exploring new things?",
+            "answerWeight": {
+                "LINEAR": 0,
+                "CIRCLE": -1,
+                "QUADRATIC": 0.5,
+                "CUBIC": 0.75,
+                "EXPONENTIAL": 0.5,
+                "LOGARITHMIC": -0.5,
+                "INVERSE": -0.25,
+                "ABSOLUTE": 0.25,
+                "SINECOSINE": -0.5,
+                "TANGENT": 0.5,
+                "SPIRAL": -0.5,
+                "PUSSY": 0
+            },
+            "choices": [
+                "Hell no!",
+                "Sorry, but no.",
+                "I don't know?",
+                "Well, yeah.",
+                "Hell yeah!"
+            ],
+            "answer": null
+        },
+        {
+            "question": "Are you more likely to fight or to flight/flee during confrontation?",
+            "answerWeight": {
+                "LINEAR": 0.25,
+                "CIRCLE": -0.75,
+                "QUADRATIC": 0.5,
+                "CUBIC": 0.75,
+                "EXPONENTIAL": 0,
+                "LOGARITHMIC": 0,
+                "INVERSE": 0,
+                "ABSOLUTE": 0,
+                "SINECOSINE": -0.75,
+                "TANGENT": 0.75,
+                "SPIRAL": -0.5,
+                "PUSSY": 0
+            },
+            "choices": [
+                "Run!!!",
+                "I'll run.",
+                "I don't know?",
+                "Yeah, I'll fight.",
+                "To war!!!"
+            ],
+            "answer": null
+        },
+        {
+            "question": "When there is a problem, do you handle it yourself <br> or do you wait for someone else to do it for you?",
+            "answerWeight": {
+                "LINEAR": 1,
+                "CIRCLE": -0.5,
+                "QUADRATIC": 0.25,
+                "CUBIC": 0,
+                "EXPONENTIAL": 0.75,
+                "LOGARITHMIC": -0.75,
+                "INVERSE": 0,
+                "ABSOLUTE": 0,
+                "SINECOSINE": -0.25,
+                "TANGENT": 0.25,
+                "SPIRAL": -1,
+                "PUSSY": 0
+            },
+            "choices": [
+                "Go, slaves!",
+                "Emmm... no...?",
+                "I don't know?",
+                "Sure.",
+                "I got it!"
+            ],
+            "answer": null
+        },
+        {
+            "question": "You have a test coming up, and you haven't revised. <br> Do you say 'fuck it', or do you rush your revision?",
+            "answerWeight": {
+                "LINEAR": 0,
+                "CIRCLE": 0,
+                "QUADRATIC": 0.25,
+                "CUBIC": 0.5,
+                "EXPONENTIAL": 1,
+                "LOGARITHMIC": -1,
+                "INVERSE": -0.5,
+                "ABSOLUTE": 0.5,
+                "SINECOSINE": 0.5,
+                "TANGENT": -0.5,
+                "SPIRAL": 0,
+                "PUSSY": 0
+            },
+            "choices": [
+                "Fuck it.",
+                "I'll be scared.",
+                "I don't know?",
+                "I'll work a bit.",
+                "Revision!"
+            ],
+            "answer": null
+        }
+    ]
+}

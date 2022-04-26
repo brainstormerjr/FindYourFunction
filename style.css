@@ -179,3 +179,7 @@ img {
     background-color: #ff0077;
     color: #ffffff;
 }
+
+.fb-share-button {
+    height: 10vh;
+}
