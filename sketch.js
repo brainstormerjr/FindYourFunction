@@ -1,10 +1,20 @@
 let questions;
 
-let censored = localStorage.getItem('censored') == "true";
-        if (censored == null) {
-            censored = true;
-            localStorage.setItem('censored', true);
-        }
+let censored = true;
+
+try {
+    censored = localStorage.getItem('censored') == "true";
+    if (censored == null) censored = true;
+} catch(e) {
+    if(e.name == "NS_ERROR_FILE_CORRUPTED") {
+        alert("Sorry, it looks like your browser storage has been corrupted. Please clear your storage by going to Tools -> Clear Recent History -> Cookies and set time range to 'Everything'. This will remove the corrupted browser storage across all sites.");
+    }
+}
+
+if (censored == null) {
+    censored = true;
+    localStorage.setItem('censored', true);
+}
 
 // Generate all questions
 let jsonData = fetch('questions.json')
