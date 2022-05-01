@@ -26,7 +26,7 @@ let jsonData = fetch('questions.json')
             let questionHTML = `<div class="QuestionContainer">
             <p class="Question" id="question ${i}">${i+1}: ${questions[i].question}</p>
         
-            <div style="text-align:center;">
+            <div style="text-align:center;" class="options-container">
                 <button class="button answer" onclick="selectAnswer(${i},0)" id="button ${i}/0">
                     ${questions[i].choices[0]}
                 </button>
