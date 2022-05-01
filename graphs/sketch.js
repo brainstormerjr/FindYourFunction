@@ -1,6 +1,22 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/learn-more#web-version-8
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Realtime database
+import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-database.js"
+// Authentication
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js"
+
 let yourGraph = window.sessionStorage.getItem('yourGraph');
 console.log(yourGraph);
 if (!yourGraph) yourGraph = PUSSY;
+
+let tempAns = window.sessionStorage.getItem('answers');
+let splitAns = tempAns.split(',')
+let answers = splitAns.map(a => {return parseInt(a)})
+console.log(answers)
 
 document.getElementById("Title").innerHTML 
     = horoscopes[yourGraph].name;
@@ -38,21 +54,7 @@ if (censored == null) {
 }
 updateCensor();
 
-function letsGoScroll() {
-    document.getElementById("scrollTarget")
-        .scrollIntoView({behavior: 'smooth', block: 'start'});
-}
-
-function loadMain() {
-    window.location.href = '../index.html';
-}
-
-function toggleCensor() {
-    censored = !censored;
-    localStorage.setItem('censored', censored);
-    updateCensor();
-}
-
+// Copy and pasted to localFunctions.js
 function updateCensor() {
     document.getElementById("censorButton").className 
         = censored ? "button censorButtonOn" : "button censorButtonOff";
@@ -74,3 +76,49 @@ function updateCensor() {
 
     document.documentElement.innerHTML = html;
 }
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyDtN_GSwBGGjYTkFje6qTMYt6K7EKG-sT0",
+    authDomain: "find-your-function.firebaseapp.com",
+    databaseURL: "https://find-your-function-default-rtdb.firebaseio.com",
+    projectId: "find-your-function",
+    storageBucket: "find-your-function.appspot.com",
+    messagingSenderId: "842600265665",
+    appId: "1:842600265665:web:a9869191897a55f262a140"
+  };
+
+// Initialize Firebase
+initializeApp(firebaseConfig)
+
+async function saveData() {
+    const database = getDatabase()
+
+    const auth = getAuth()
+
+    signInAnonymously(auth).then(user => {
+        if (user) {
+            const reference = ref(database, `users/${user.user.uid}`)
+            console.log(`user id: ${user.user.uid}`)
+            get(reference).then(data => {
+                let ourData = [
+                    {
+                        answers,
+                        graph: yourGraph
+                    }
+                ]
+                if (data.val()) {
+                    // data[`graph${Object.keys(existingData).length}`] = yourGraph
+                    ourData = data.val()
+                    if (!Object.values(ourData).includes({answers,graph: yourGraph})) {
+                        ourData.push({answers,graph: yourGraph})
+                    }
+                }
+                set(reference, ourData)
+            })
+        }
+    })
+    .catch(err => console.error(err))
+}
+
+saveData().catch(e => console.log(e))

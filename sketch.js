@@ -106,22 +106,23 @@ function selectAnswer(question, option) {
 }
 
 function calculatePoints() {
+    let answers = []
     for (let i = 0; i < questions.length; i++) {
         if (questions[i].answer == null) {
             alert("You haven't completed all the questions I'm afraid :(");
             return;
-        } else {
-            if (questions[i].answer != 0) {
-                for (const key in scores) {
-                    if (questions[i].answerWeight[key] != 0) { 
-                        scores[key] += questions[i].answer 
-                            * questions[i].answerWeight[key];
-                        matchups[key]++;
-                    }
+        }
+        answers.push(questions[i].answer)
+        if (questions[i].answer != 0) {
+            for (const key in scores) {
+                if (questions[i].answerWeight[key] != 0) { 
+                    scores[key] += questions[i].answer 
+                        * questions[i].answerWeight[key];
+                    matchups[key]++;
                 }
-            } else {
-                scores[PUSSY] += 1;
             }
+        } else {
+            scores[PUSSY] += 1;
         }
     }
     let yourGraph = null;
@@ -140,8 +141,8 @@ function calculatePoints() {
         }
     }
 
-    console.log(yourGraph);
     window.sessionStorage.setItem('yourGraph', yourGraph);
+    window.sessionStorage.setItem('answers', answers)
 
     window.location.href = 'graphs/horoscope.html';
     
