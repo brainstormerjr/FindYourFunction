@@ -110,7 +110,7 @@ async function saveData() {
                 if (data.val()) {
                     // data[`graph${Object.keys(existingData).length}`] = yourGraph
                     ourData = data.val()
-                    if (!Object.values(ourData).includes({answers,graph: yourGraph})) {
+                    if (ourData.includes({answers,graph: yourGraph})) {
                         ourData.push({answers,graph: yourGraph})
                     }
                 }
